@@ -1,57 +1,53 @@
 = minitest-rails-capybara
 
-* FIX (url)
+Capybara integration for MiniTest::Rails.
 
-== DESCRIPTION:
+== Install
 
-FIX (describe your package)
+    gem install minitest-rails-capybara
 
-== FEATURES/PROBLEMS:
+This installs the following gems:
 
-* FIX (list of features or problems)
+    minitest
+    minitest-rails
+    capybara
 
-== SYNOPSIS:
+== Configure
 
-  FIX (code sample of usage)
+Follow the instructions to configure <tt>minitest-rails</tt>. Then add <tt>minitest-rails-capybara</tt> to the <tt>:test</tt> and <tt>:development</tt> groups in Gemfile:
 
-== REQUIREMENTS:
+    group :test, :development do
+      gem 'minitest-rails'
+      gem 'minitest-rails-capybara'
+    end
 
-* FIX (list of requirements)
+Add the following to your <tt>minitest_helper.rb</tt> file to the <tt>test</tt> directory.
 
-== INSTALL:
+    require "minitest/rails/capybara"
 
-* FIX (sudo gem install, anything else)
+== Usage
 
-== DEVELOPERS:
+Generate a new acceptance test using the default generator:
 
-After checking out the source, run:
+    rails generate integration_test CanAccessHome
 
-  $ rake newb
+And you can specify use of the MiniTest::Spec DSL by providing the <tt>--spec</tt> option:
 
-This task will install any missing dependencies, run the tests/specs,
-and generate the RDoc.
+    rails generate integration_test CanAccessHome --spec
 
-== LICENSE:
+You can now use Capybara in your acceptance tests!
 
-(The MIT License)
+    require "minitest_helper"
+    
+    class CanAccessHomeTest < MiniTest::Rails::ActionDispatch::IntegrationTest
+      test "the homepage has content" do
+        visit root_path
+        assert page.has_content?("Home#index")
+      end
+    end
 
-Copyright (c) 2012 FIX
+== Get Involved
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+Join the mailing list to get help or offer suggestions.
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+https://groups.google.com/forum/#!forum/minitest-rails
