@@ -50,4 +50,4 @@ You can now use Capybara in your acceptance tests!
 
 Join the mailing list to get help or offer suggestions.
 
-https://groups.google.com/forum/#!forum/minitest-rails
+https://groups.google.com/group/minitest-rails
