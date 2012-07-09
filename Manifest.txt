@@ -1,9 +1,11 @@
 .autotest
 .gemtest
 CHANGELOG.rdoc
+LICENSE
 Manifest.txt
 README.rdoc
 Rakefile
+lib/minitest-rails-capybara.rb
 lib/minitest/rails/capybara.rb
 minitest-rails-capybara.gemspec
 test/test_minitest_rails_capybara.rb
