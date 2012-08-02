@@ -1,8 +1,8 @@
-require "test/unit"
-require "minitest/rails/capybara"
+require "minitest/autorun"
+require "minitest-rails-capybara"
 
-class TestMinitest::Rails::Capybara < Test::Unit::TestCase
+class TestMiniTestRailsCapybara < MiniTest::Unit::TestCase
   def test_sanity
-    flunk "write tests or I will kneecap you"
+    assert MiniTest::Rails::Capybara::VERSION
   end
 end
