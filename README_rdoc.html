@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - minitest-rails-capybara-0.1 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./MiniTest.html">MiniTest</a>
+  
+    <li><a href="./MiniTest/Rails.html">MiniTest::Rails</a>
+  
+    <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
+  
+    <li><a href="./MiniTest/Rails/ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
+  
+    <li><a href="./MiniTest/Rails/Capybara.html">MiniTest::Rails::Capybara</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-minitest-rails-capybara">minitest-rails-capybara</h1>
+
+<p>Capybara integration for <a href="MiniTest/Rails.html">MiniTest::Rails</a>.</p>
+
+<h2 id="label-Install">Install</h2>
+
+<pre>gem install minitest-rails-capybara</pre>
+
+<p>This installs the following gems:</p>
+
+<pre>minitest
+minitest-rails
+minitest-matchers
+minitest-capybara
+capybara</pre>
+
+<h2 id="label-Configure">Configure</h2>
+
+<p>Follow the instructions to configure <code>minitest-rails</code>. Then add
+<code>minitest-rails-capybara</code> to the <code>:test</code> group in
+Gemfile:</p>
+
+<pre>group :development, :test do
+  gem &quot;minitest-rails&quot;
+end
+
+group :test do
+  gem &quot;minitest-rails-capybara&quot;
+end</pre>
+
+<p>Add the following to your <code>minitest_helper.rb</code> file to the
+<code>test</code> directory.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/rails/capybara&quot;</span>
+</pre>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p>Generate a new acceptance test using the default generator:</p>
+
+<pre>rails generate integration_test CanAccessHome</pre>
+
+<p>And you can specify use of the MiniTest::Spec DSL by providing the
+<code>--spec</code> option:</p>
+
+<pre>rails generate integration_test CanAccessHome --spec</pre>
+
+<p>You can now use Capybara in your acceptance tests!</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">CanAccessHomeTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">MiniTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">IntegrationTest</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_homepage_has_content</span>
+    <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">has_content?</span>(<span class="ruby-node">&quot;Home#index&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Or, using the Spec DSL:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
+
+<span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Can Access Home Acceptance Test&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;has content&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">has_content?</span>(<span class="ruby-node">&quot;Home#index&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Get+Involved">Get Involved</h2>
+
+<p>Join the mailing list to get help or offer suggestions.</p>
+
+<p><a
+href="https://groups.google.com/group/minitest-rails">groups.google.com/group/minitest-rails</a></p>
+
+<h2 id="label-License">License</h2>
+
+<p>Copyright © 2012 Mike Moore</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
