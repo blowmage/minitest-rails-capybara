@@ -10,15 +10,20 @@ This installs the following gems:
 
     minitest
     minitest-rails
+    minitest-matchers
+    minitest-capybara
     capybara
 
 == Configure
 
-Follow the instructions to configure <tt>minitest-rails</tt>. Then add <tt>minitest-rails-capybara</tt> to the <tt>:test</tt> and <tt>:development</tt> groups in Gemfile:
+Follow the instructions to configure <tt>minitest-rails</tt>. Then add <tt>minitest-rails-capybara</tt> to the <tt>:test</tt> group in Gemfile:
 
-    group :test, :development do
-      gem 'minitest-rails'
-      gem 'minitest-rails-capybara'
+    group :development, :test do
+      gem "minitest-rails"
+    end
+
+    group :test do
+      gem "minitest-rails-capybara"
     end
 
 Add the following to your <tt>minitest_helper.rb</tt> file to the <tt>test</tt> directory.
@@ -40,7 +45,18 @@ You can now use Capybara in your acceptance tests!
     require "minitest_helper"
     
     class CanAccessHomeTest < MiniTest::Rails::ActionDispatch::IntegrationTest
-      test "the homepage has content" do
+      def test_homepage_has_content
+        visit root_path
+        assert page.has_content?("Home#index")
+      end
+    end
+
+Or, using the Spec DSL:
+
+    require "minitest_helper"
+    
+    describe "Can Access Home Acceptance Test" do
+      it "has content" do
         visit root_path
         assert page.has_content?("Home#index")
       end
@@ -54,6 +70,23 @@ https://groups.google.com/group/minitest-rails
 
 == License
 
-Copyright © 2012 Mike Moore.
+Copyright (c) 2012 Mike Moore
 
-Released under the MIT license. See `LICENSE` for details.
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
