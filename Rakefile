@@ -18,8 +18,8 @@ Hoe.spec 'minitest-rails-capybara' do
   self.readme_file  = "README.rdoc"
   self.testlib      = :minitest
 
-  extra_deps << ['minitest-rails']
-  extra_deps << ['capybara']
+  dependency 'minitest-rails', '~> 0.1'
+  dependency 'minitest-capybara', '~> 0.1'
 end
 
 # vim: syntax=ruby
