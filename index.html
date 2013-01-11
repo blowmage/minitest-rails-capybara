@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>minitest-rails-capybara-0.1 Documentation</title>
+<title>minitest-rails-capybara-0.5 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -65,13 +65,19 @@
   
     <li><a href="./MiniTest.html">MiniTest</a>
   
+    <li><a href="./MiniTest/Generators.html">MiniTest::Generators</a>
+  
+    <li><a href="./MiniTest/Generators/FeatureGenerator.html">MiniTest::Generators::FeatureGenerator</a>
+  
     <li><a href="./MiniTest/Rails.html">MiniTest::Rails</a>
   
-    <li><a href="./MiniTest/Rails/ActionDispatch.html">MiniTest::Rails::ActionDispatch</a>
-  
-    <li><a href="./MiniTest/Rails/ActionDispatch/IntegrationTest.html">MiniTest::Rails::ActionDispatch::IntegrationTest</a>
-  
     <li><a href="./MiniTest/Rails/Capybara.html">MiniTest::Rails::Capybara</a>
+  
+    <li><a href="./Capybara.html">Capybara</a>
+  
+    <li><a href="./Capybara/Rails.html">Capybara::Rails</a>
+  
+    <li><a href="./Capybara/Rails/TestCase.html">Capybara::Rails::TestCase</a>
   
   </ul>
 </nav>
@@ -83,7 +89,8 @@
   
 <h1 id="label-minitest-rails-capybara">minitest-rails-capybara</h1>
 
-<p>Capybara integration for <a href="MiniTest/Rails.html">MiniTest::Rails</a>.</p>
+<p><a href="Capybara.html">Capybara</a> integration for <a
+href="MiniTest.html">MiniTest</a> and Rails.</p>
 
 <h2 id="label-Install">Install</h2>
 
@@ -119,20 +126,26 @@ end</pre>
 
 <h2 id="label-Usage">Usage</h2>
 
-<p>Generate a new acceptance test using the default generator:</p>
+<p><a href="Capybara.html">Capybara</a> is intended to be used for automating
+a browser to test your application's features. This is different than the
+integration tests that Rails provides, so you must use the
+<code>Capybara::Rails::TestCase</code> for your feature tests.</p>
 
-<pre>rails generate integration_test CanAccessHome</pre>
+<p>To generate these feature tests, you can use the feature generator:</p>
+
+<pre>rails generate mini_test:feature CanAccessHome</pre>
 
 <p>And you can specify use of the MiniTest::Spec DSL by providing the
 <code>--spec</code> option:</p>
 
-<pre>rails generate integration_test CanAccessHome --spec</pre>
+<pre>rails generate mini_test:feature CanAccessHome --spec</pre>
 
-<p>You can now use Capybara in your acceptance tests!</p>
+<p>You can now use <a href="Capybara.html">Capybara</a> in your acceptance
+tests!</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
 
-<span class="ruby-keyword">class</span> <span class="ruby-constant">CanAccessHomeTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">MiniTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">IntegrationTest</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">CanAccessHomeTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_homepage_has_content</span>
     <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span>
     <span class="ruby-identifier">assert</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">has_content?</span>(<span class="ruby-node">&quot;Home#index&quot;</span>)
@@ -144,11 +157,21 @@ end</pre>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
 
-<span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Can Access Home Acceptance Test&quot;</span> <span class="ruby-keyword">do</span>
+<span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Can Access Home Feature Test&quot;</span> <span class="ruby-keyword">do</span>
   <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;has content&quot;</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span>
     <span class="ruby-identifier">assert</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">has_content?</span>(<span class="ruby-node">&quot;Home#index&quot;</span>)
   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>If you want <a href="Capybara.html">Capybara</a> within your integration
+tests, add the following to your <code>minitest_helper.rb</code> file:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">IntegrationTest</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">routes</span>.<span class="ruby-identifier">url_helpers</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpecMatchers</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">DSL</span>
 <span class="ruby-keyword">end</span>
 </pre>
 
@@ -161,7 +184,7 @@ href="https://groups.google.com/group/minitest-rails">groups.google.com/group/mi
 
 <h2 id="label-License">License</h2>
 
-<p>Copyright © 2012 Mike Moore</p>
+<p>Copyright © 2013 Mike Moore</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the “Software”),
