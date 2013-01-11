@@ -5,6 +5,9 @@ LICENSE
 Manifest.txt
 README.rdoc
 Rakefile
+lib/generators/mini_test/feature/feature_generator.rb
+lib/generators/mini_test/feature/templates/feature_spec.rb
+lib/generators/mini_test/feature/templates/feature_test.rb
 lib/minitest-rails-capybara.rb
 lib/minitest/rails/capybara.rb
 minitest-rails-capybara.gemspec
