@@ -1,9 +1,9 @@
-Fri, 11 Jan 2013 00:11:57 -0700
-lib/generators/mini_test/feature/feature_generator.rb	Thu, 10 Jan 2013 23:14:41 -0700
-lib/generators/mini_test/feature/templates/feature_spec.rb	Thu, 10 Jan 2013 23:19:58 -0700
-lib/generators/mini_test/feature/templates/feature_test.rb	Thu, 10 Jan 2013 23:20:12 -0700
-lib/minitest/rails/capybara.rb	Thu, 10 Jan 2013 22:35:15 -0700
-lib/minitest-rails-capybara.rb	Thu, 10 Jan 2013 23:56:16 -0700
-CHANGELOG.rdoc	Fri, 11 Jan 2013 00:06:31 -0700
-Manifest.txt	Thu, 10 Jan 2013 23:57:29 -0700
-README.rdoc	Thu, 10 Jan 2013 23:34:16 -0700
+Fri, 11 Jan 2013 10:13:39 -0700
+lib/generators/mini_test/feature/feature_generator.rb	Fri, 11 Jan 2013 00:26:59 -0700
+lib/generators/mini_test/feature/templates/feature_spec.rb	Fri, 11 Jan 2013 10:03:04 -0700
+lib/generators/mini_test/feature/templates/feature_test.rb	Fri, 11 Jan 2013 00:26:59 -0700
+lib/minitest/rails/capybara.rb	Fri, 11 Jan 2013 10:03:56 -0700
+lib/minitest-rails-capybara.rb	Fri, 11 Jan 2013 10:09:46 -0700
+CHANGELOG.rdoc	Fri, 11 Jan 2013 10:12:21 -0700
+Manifest.txt	Fri, 11 Jan 2013 10:10:06 -0700
+README.rdoc	Fri, 11 Jan 2013 10:08:05 -0700

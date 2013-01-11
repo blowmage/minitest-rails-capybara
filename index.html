@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>minitest-rails-capybara-0.5 Documentation</title>
+<title>minitest-rails-capybara-0.5.1 Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -73,6 +73,8 @@
   
     <li><a href="./MiniTest/Rails/Capybara.html">MiniTest::Rails::Capybara</a>
   
+    <li><a href="./MiniTest/Spec.html">MiniTest::Spec</a>
+  
     <li><a href="./Capybara.html">Capybara</a>
   
     <li><a href="./Capybara/Rails.html">Capybara::Rails</a>
@@ -135,13 +137,7 @@ integration tests that Rails provides, so you must use the
 
 <pre>rails generate mini_test:feature CanAccessHome</pre>
 
-<p>And you can specify use of the MiniTest::Spec DSL by providing the
-<code>--spec</code> option:</p>
-
-<pre>rails generate mini_test:feature CanAccessHome --spec</pre>
-
-<p>You can now use <a href="Capybara.html">Capybara</a> in your acceptance
-tests!</p>
+<p>You can now use <a href="Capybara.html">Capybara</a> in your feature tests!</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
 
@@ -153,12 +149,18 @@ tests!</p>
 <span class="ruby-keyword">end</span>
 </pre>
 
-<p>Or, using the Spec DSL:</p>
+<p>Or you can specify use of the Capybara’s spec DSL by providing the
+<code>--spec</code> option:</p>
+
+<pre>rails generate mini_test:feature CanAccessHome --spec</pre>
+
+<p>Which will generate a feature test using the <a
+href="Capybara.html">Capybara</a> spec DSL:</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
 
-<span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Can Access Home Feature Test&quot;</span> <span class="ruby-keyword">do</span>
-  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;has content&quot;</span> <span class="ruby-keyword">do</span>
+<span class="ruby-identifier">feature</span> <span class="ruby-string">&quot;Can Access Home Feature Test&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">scenario</span> <span class="ruby-string">&quot;has content&quot;</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span>
     <span class="ruby-identifier">assert</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">has_content?</span>(<span class="ruby-node">&quot;Home#index&quot;</span>)
   <span class="ruby-keyword">end</span>
