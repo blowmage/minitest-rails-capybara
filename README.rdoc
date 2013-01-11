@@ -1,6 +1,6 @@
 = minitest-rails-capybara
 
-Capybara integration for MiniTest::Rails.
+Capybara integration for MiniTest and Rails.
 
 == Install
 
@@ -32,19 +32,21 @@ Add the following to your <tt>minitest_helper.rb</tt> file to the <tt>test</tt> 
 
 == Usage
 
-Generate a new acceptance test using the default generator:
+Capybara is intended to be used for automating a browser to test your application's features. This is different than the integration tests that Rails provides, so you must use the <tt>Capybara::Rails::TestCase</tt> for your feature tests.
 
-    rails generate integration_test CanAccessHome
+To generate these feature tests, you can use the feature generator:
+
+    rails generate mini_test:feature CanAccessHome
 
 And you can specify use of the MiniTest::Spec DSL by providing the <tt>--spec</tt> option:
 
-    rails generate integration_test CanAccessHome --spec
+    rails generate mini_test:feature CanAccessHome --spec
 
 You can now use Capybara in your acceptance tests!
 
     require "minitest_helper"
     
-    class CanAccessHomeTest < MiniTest::Rails::ActionDispatch::IntegrationTest
+    class CanAccessHomeTest < Capybara::Rails::TestCase
       def test_homepage_has_content
         visit root_path
         assert page.has_content?("Home#index")
@@ -55,11 +57,19 @@ Or, using the Spec DSL:
 
     require "minitest_helper"
     
-    describe "Can Access Home Acceptance Test" do
+    describe "Can Access Home Feature Test" do
       it "has content" do
         visit root_path
         assert page.has_content?("Home#index")
       end
+    end
+
+If you want Capybara within your integration tests, add the following to your <tt>minitest_helper.rb</tt> file:
+
+    class ActionDispatch::IntegrationTest
+      include Rails.application.routes.url_helpers
+      include Capybara::RSpecMatchers
+      include Capybara::DSL
     end
 
 == Get Involved
@@ -70,7 +80,7 @@ https://groups.google.com/group/minitest-rails
 
 == License
 
-Copyright (c) 2012 Mike Moore
+Copyright (c) 2013 Mike Moore
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
