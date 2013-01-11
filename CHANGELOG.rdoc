@@ -1,7 +1,7 @@
 === 0.5 / 2013-01-11
 
-  * Create Capybara::Rails::TestCase
-  * Add feature generator
+* Create Capybara::Rails::TestCase
+* Add feature generator
 
 https://github.com/blowmage/minitest-rails-capybara/compare/v0.1...v0.5
 
