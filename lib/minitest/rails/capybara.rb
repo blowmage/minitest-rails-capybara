@@ -15,3 +15,17 @@ module Capybara
     end
   end
 end
+
+# Enable Capybara's spec DSL using MiniTest::Spec
+# This is very similar to the steak DSL
+class MiniTest::Spec
+  class << self
+    alias :background :before
+    alias :scenario   :it
+    alias :given      :let
+  end
+end
+
+module Kernel # :nodoc:
+  alias :feature :describe
+end
