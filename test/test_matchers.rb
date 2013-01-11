@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Capybara Matchers Acceptance Test" do
+describe "Capybara Matchers Feature Test" do
 
   describe "have_content" do
     it "has page with content" do

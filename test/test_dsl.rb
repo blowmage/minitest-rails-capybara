@@ -1,20 +1,26 @@
 require "rails_helper"
 
-describe "Capybara DSL Acceptance Test" do
+describe "Capybara DSL Feature Test" do
 
   it "can call using_wait_time" do
-    Capybara.expects(:using_wait_time).with(6)
-    using_wait_time(6)
+    ret = "ZOMG! using_wait_time was called!"
+    Capybara.stub :using_wait_time, ret do
+      assert_equal ret, using_wait_time(6)
+    end
   end
 
   it "can call page" do
-    Capybara.expects(:current_session)
-    page
+    ret = "ZOMG! page called current_session!"
+    Capybara.stub :current_session, ret do
+      assert_equal ret, page
+    end
   end
 
   it "can call using_session" do
-    Capybara.expects(:using_session).with(:name)
-    using_session(:name)
+    ret = "ZOMG! using_session was called!"
+    Capybara.stub :using_session, ret do
+      using_session(:name)
+    end
   end
 
 end
