@@ -38,11 +38,7 @@ To generate these feature tests, you can use the feature generator:
 
     rails generate mini_test:feature CanAccessHome
 
-And you can specify use of the MiniTest::Spec DSL by providing the <tt>--spec</tt> option:
-
-    rails generate mini_test:feature CanAccessHome --spec
-
-You can now use Capybara in your acceptance tests!
+You can now use Capybara in your feature tests!
 
     require "minitest_helper"
     
@@ -53,12 +49,16 @@ You can now use Capybara in your acceptance tests!
       end
     end
 
-Or, using the Spec DSL:
+Or you can specify use of the Capybara's spec DSL by providing the <tt>--spec</tt> option:
+
+    rails generate mini_test:feature CanAccessHome --spec
+
+Which will generate a feature test using the Capybara spec DSL:
 
     require "minitest_helper"
     
-    describe "Can Access Home Feature Test" do
-      it "has content" do
+    feature "Can Access Home Feature Test" do
+      scenario "has content" do
         visit root_path
         assert page.has_content?("Home#index")
       end
