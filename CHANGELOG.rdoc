@@ -1,3 +1,10 @@
+=== 0.5 / 2013-01-11
+
+  * Create Capybara::Rails::TestCase
+  * Add feature generator
+
+https://github.com/blowmage/minitest-rails-capybara/compare/v0.1...v0.5
+
 === 0.1 / 2012-08-02
 
 * Defer to minitest-capybara for Capybara integration
