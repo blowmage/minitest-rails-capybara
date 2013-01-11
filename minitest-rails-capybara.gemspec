@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "minitest-rails-capybara"
-  s.version = "0.5.20130110235730"
+  s.version = "0.5.1.20130111101006"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Moore"]
@@ -10,14 +10,14 @@ Gem::Specification.new do |s|
   s.description = "Adds Capybara feature tests in MiniTest and Rails."
   s.email = ["mike@blowmage.com"]
   s.extra_rdoc_files = ["CHANGELOG.rdoc", "Manifest.txt", "README.rdoc"]
-  s.files = [".autotest", ".gemtest", "CHANGELOG.rdoc", "LICENSE", "Manifest.txt", "README.rdoc", "Rakefile", "lib/generators/mini_test/feature/feature_generator.rb", "lib/generators/mini_test/feature/templates/feature_spec.rb", "lib/generators/mini_test/feature/templates/feature_test.rb", "lib/minitest-rails-capybara.rb", "lib/minitest/rails/capybara.rb", "minitest-rails-capybara.gemspec", "test/rails_helper.rb", "test/test_dsl.rb", "test/test_matchers.rb", "test/test_sanity.rb"]
+  s.files = [".autotest", ".gemtest", "CHANGELOG.rdoc", "LICENSE", "Manifest.txt", "README.rdoc", "Rakefile", "lib/generators/mini_test/feature/feature_generator.rb", "lib/generators/mini_test/feature/templates/feature_spec.rb", "lib/generators/mini_test/feature/templates/feature_test.rb", "lib/minitest-rails-capybara.rb", "lib/minitest/rails/capybara.rb", "minitest-rails-capybara.gemspec", "test/rails_helper.rb", "test/test_dsl.rb", "test/test_matchers.rb", "test/test_sanity.rb", "test/test_spec.rb"]
   s.homepage = "http://blowmage.com/minitest-rails-capybara"
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = "minitest-rails-capybara"
   s.rubygems_version = "1.8.23"
   s.summary = "Capybara integration for MiniTest and Rails"
-  s.test_files = ["test/test_dsl.rb", "test/test_matchers.rb", "test/test_sanity.rb"]
+  s.test_files = ["test/test_dsl.rb", "test/test_matchers.rb", "test/test_sanity.rb", "test/test_spec.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

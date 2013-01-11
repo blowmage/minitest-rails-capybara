@@ -1,3 +1,9 @@
+=== 0.5.1 / 2013-01-11
+
+  * Add the Capybara spec DSL
+
+https://github.com/blowmage/minitest-rails-capybara/compare/v0.5...v0.5.1
+
 === 0.5 / 2013-01-11
 
 * Create Capybara::Rails::TestCase

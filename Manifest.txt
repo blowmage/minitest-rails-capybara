@@ -15,3 +15,4 @@ test/rails_helper.rb
 test/test_dsl.rb
 test/test_matchers.rb
 test/test_sanity.rb
+test/test_spec.rb
