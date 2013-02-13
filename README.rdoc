@@ -18,9 +18,7 @@ This installs the following gems:
 
 Follow the instructions to configure <tt>minitest-rails</tt>. Then add <tt>minitest-rails-capybara</tt> to the <tt>:test</tt> group in Gemfile:
 
-    group :development, :test do
-      gem "minitest-rails"
-    end
+    gem "minitest-rails"
 
     group :test do
       gem "minitest-rails-capybara"
