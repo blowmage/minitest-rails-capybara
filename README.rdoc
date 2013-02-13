@@ -70,6 +70,16 @@ If you want Capybara within your integration tests, add the following to your <t
       include Capybara::DSL
     end
 
+== Running Tests
+
+Issue the following rake command to run your features tests:
+
+    $ rake minitests:features
+
+Or add the following to the bottom of your Rakefile to add feature tests to the default testing task:
+
+    MiniTest::Rails::Testing.default_tasks << "features"
+
 == Get Involved
 
 Join the mailing list to get help or offer suggestions.
