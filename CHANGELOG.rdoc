@@ -1,3 +1,10 @@
+=== 0.9.0 / 2013-03-18
+
+  * Add minitest-metadata dependency
+  * Move capybara spec into TestCase
+  * Add instructions for running tests
+  * Update install instructions
+
 === 0.5.1 / 2013-01-11
 
   * Add the Capybara spec DSL

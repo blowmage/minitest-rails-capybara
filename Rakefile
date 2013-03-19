@@ -18,7 +18,7 @@ Hoe.spec 'minitest-rails-capybara' do
   self.readme_file  = "README.rdoc"
   self.testlib      = :minitest
 
-  dependency 'minitest-rails',    '~> 0.5'
+  dependency 'minitest-rails',    '~> 0.9.1'
   dependency 'capybara',          '~> 2.0'
   dependency 'minitest-capybara', '~> 0.1'
   dependency 'minitest-matchers', '~> 1.2'
