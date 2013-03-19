@@ -12,17 +12,14 @@ module Capybara
 
       # Register by name
       register_spec_type(/(Feature|Browser)( ?Test)?\z/i, self)
-    end
-  end
-end
 
-# Enable Capybara's spec DSL using MiniTest::Spec
-# This is very similar to the steak DSL
-class MiniTest::Spec
-  class << self
-    alias :background :before
-    alias :scenario   :it
-    alias :given      :let
+      # Enable Capybara's spec DSL
+      class << self
+        alias :background :before
+        alias :scenario   :it
+        alias :given      :let
+      end
+    end
   end
 end
 
