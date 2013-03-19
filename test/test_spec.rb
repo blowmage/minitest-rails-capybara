@@ -32,4 +32,16 @@ feature "Capybara Spec DSL Feature Test" do
 
   end
 
+  feature "metadata" do
+
+    scenario "default driver" do
+      assert_equal Capybara.default_driver, Capybara.current_driver
+    end
+
+    scenario "javascript driver", js: true do
+      assert_equal Capybara.javascript_driver, Capybara.current_driver
+    end
+
+  end
+
 end

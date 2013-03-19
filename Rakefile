@@ -21,7 +21,8 @@ Hoe.spec 'minitest-rails-capybara' do
   dependency 'minitest-rails',    '~> 0.5'
   dependency 'capybara',          '~> 2.0'
   dependency 'minitest-capybara', '~> 0.1'
-  dependency 'minitest-matchers', '>= 1.2'
+  dependency 'minitest-matchers', '~> 1.2'
+  dependency 'minitest-metadata', '~> 0.3'
 end
 
 # vim: syntax=ruby
