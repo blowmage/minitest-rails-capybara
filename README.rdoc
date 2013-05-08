@@ -89,7 +89,7 @@ https://github.com/wojtekmach/minitest-metadata
 
 Issue the following rake command to run your features tests:
 
-    $ rake minitests:features
+    $ rake minitest:features
 
 Or add the following to the bottom of your Rakefile to add feature tests to the default testing task:
 
