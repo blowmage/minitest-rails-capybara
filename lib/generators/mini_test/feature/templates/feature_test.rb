@@ -1,4 +1,4 @@
-require "minitest_helper"
+require "test_helper"
 
 class <%= class_name %>Test < Capybara::Rails::TestCase
   test "sanity" do
