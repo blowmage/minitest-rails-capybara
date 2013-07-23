@@ -12,7 +12,7 @@ lib/minitest-rails-capybara.rb
 lib/minitest/rails/capybara.rb
 minitest-rails-capybara.gemspec
 test/rails_helper.rb
+test/test_assertions_expectation.rb
 test/test_dsl.rb
-test/test_matchers.rb
 test/test_sanity.rb
 test/test_spec.rb
