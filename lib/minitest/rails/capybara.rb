@@ -1,5 +1,5 @@
 require "minitest/rails"
-# Load minitest-matchers and fix Capybara::RSpecMatchers
+# Load minitest-capybara and minitest-matchers
 require "minitest-capybara"
 require "capybara/rails"
 require "minitest/metadata"
@@ -8,8 +8,8 @@ module Capybara
   module Rails
     class TestCase < ::ActiveSupport::TestCase
       include ::Rails.application.routes.url_helpers
-      include Capybara::RSpecMatchers
       include Capybara::DSL
+      include Capybara::Assertions
       include MiniTest::Metadata
 
       # Register by name
