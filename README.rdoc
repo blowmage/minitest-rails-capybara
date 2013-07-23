@@ -55,7 +55,7 @@ Which will generate a feature test using the Capybara spec DSL:
 
     require "minitest_helper"
     
-    feature "Can Access Home Feature Test" do
+    feature "Can Access Home" do
       scenario "has content" do
         visit root_path
         assert page.has_content?("Home#index")
@@ -74,7 +74,7 @@ If you want Capybara within your integration tests, add the following to your <t
 
 Tests can specify drivers by setting the metadata.
 
-    feature "Can Access Home Feature Test" do
+    feature "Can Access Home" do
       scenario "has content", js: true do
         visit root_path # Visited with JavaScript driver
         assert page.has_content?("Home#index")

@@ -37,7 +37,9 @@ module Capybara
 end
 
 module Kernel # :nodoc:
-  alias :feature :describe
+  def feature desc, &blk
+    describe "#{desc} Feature Test", &blk
+  end
 end
 
 module Capybara
