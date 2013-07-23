@@ -10,6 +10,11 @@ describe "Capybara Assertions and Expectations Feature Test" do
       page.must_have_content    "Hello World"
       page.wont_have_content    "Goobye All!"
     end
+    it "gives a warning on old assertions" do
+      visit root_path
+      assert_have_content page, "Hello World"
+      refute_have_content page, "Goobye All!"
+    end
   end
 
   describe "have_selector" do
