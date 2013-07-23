@@ -30,7 +30,8 @@ module Capybara
       end
 
       after do
-        Capybara.current_driver = Capybara.default_driver
+        Capybara.reset_sessions!
+        Capybara.use_default_driver
       end
     end
   end
