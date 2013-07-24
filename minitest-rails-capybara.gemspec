@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = "minitest-rails-capybara"
-  s.version = "0.9.0.20130723111209"
+  s.version = "0.10.0.20130723183802"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Moore"]
-  s.date = "2013-07-23"
+  s.date = "2013-07-24"
   s.description = "Adds Capybara feature tests in MiniTest and Rails."
   s.email = ["mike@blowmage.com"]
   s.extra_rdoc_files = ["CHANGELOG.rdoc", "Manifest.txt", "README.rdoc"]
