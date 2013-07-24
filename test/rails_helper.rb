@@ -22,6 +22,7 @@ end
 
 Rails.application = TestApp
 
+require "rails/test_help"
 require "minitest/rails/capybara"
 
 Capybara.session_name = nil
