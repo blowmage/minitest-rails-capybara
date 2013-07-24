@@ -10,7 +10,6 @@ This installs the following gems:
 
     minitest
     minitest-rails
-    minitest-matchers
     minitest-capybara
     capybara
 
@@ -65,9 +64,8 @@ Which will generate a feature test using the Capybara spec DSL:
 If you want Capybara within your integration tests, add the following to your <tt>minitest_helper.rb</tt> file:
 
     class ActionDispatch::IntegrationTest
-      include Rails.application.routes.url_helpers
-      include Capybara::RSpecMatchers
       include Capybara::DSL
+      include Capybara::Assertions
     end
 
 == Specifying drivers
