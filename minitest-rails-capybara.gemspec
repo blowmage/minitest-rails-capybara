@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "2.0.5"
   s.summary = "Capybara integration for MiniTest and Rails"
   s.test_files = ["test/test_assertions_expectation.rb", "test/test_dsl.rb", "test/test_sanity.rb", "test/test_spec.rb"]
+  s.license = 'MIT'
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
