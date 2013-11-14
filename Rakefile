@@ -18,6 +18,8 @@ Hoe.spec 'minitest-rails-capybara' do
   self.readme_file  = "README.rdoc"
   self.testlib      = :minitest
 
+  license "MIT"
+
   dependency 'minitest-rails',    '~> 0.9.1'
   dependency 'capybara',          '~> 2.0'
   dependency 'minitest-capybara', '~> 0.4'
