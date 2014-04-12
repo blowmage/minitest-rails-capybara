@@ -22,8 +22,8 @@ Hoe.spec 'minitest-rails-capybara' do
 
   dependency 'minitest-rails',    '~> 0.9.1'
   dependency 'capybara',          '~> 2.0'
-  dependency 'minitest-capybara', '~> 0.4'
-  dependency 'minitest-metadata', '~> 0.4'
+  dependency 'minitest-capybara', '~> 0.5.0'
+  dependency 'minitest-metadata', '~> 0.5.0'
 end
 
 Dir["tasks/**/*.rake"].each { |t| load t }
