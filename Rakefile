@@ -26,4 +26,6 @@ Hoe.spec 'minitest-rails-capybara' do
   dependency 'minitest-metadata', '~> 0.4'
 end
 
+Dir["tasks/**/*.rake"].each { |t| load t }
+
 # vim: syntax=ruby
