@@ -2,6 +2,9 @@
 
 Capybara integration for MiniTest and Rails.
 
+{<img src="https://secure.travis-ci.org/blowmage/minitest-rails-capybara.png" alt="Build Status" />}[http://travis-ci.org/blowmage/minitest-rails-capybara]
+{<img src="https://codeclimate.com/github/blowmage/minitest-rails-capybara.png" />}[https://codeclimate.com/github/blowmage/minitest-rails-capybara]
+
 == Install
 
     gem install minitest-rails-capybara
