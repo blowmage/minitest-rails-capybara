@@ -8,6 +8,7 @@ module Capybara
   module Rails
     class Helpers # :nodoc:
       include ::Rails.application.routes.url_helpers
+      include ::Rails.application.routes.mounted_helpers if ::Rails.application.routes.respond_to? :mounted_helpers
       def initialize
         self.default_url_options = ::Rails.application.routes.default_url_options
         self.default_url_options[:host] ||= "test.local"
