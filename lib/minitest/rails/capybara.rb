@@ -6,8 +6,14 @@ require "minitest/metadata"
 
 module Capybara
   module Rails
-    class TestCase < ::ActiveSupport::TestCase
+    class Helpers # :nodoc:
       include ::Rails.application.routes.url_helpers
+      def initialize
+        self.default_url_options = ::Rails.application.routes.default_url_options
+        self.default_url_options[:host] ||= "test.local"
+      end
+    end
+    class TestCase < ::ActiveSupport::TestCase
       include Capybara::DSL
       include Capybara::Assertions
       include MiniTest::Metadata
@@ -32,6 +38,21 @@ module Capybara
       after do
         Capybara.reset_sessions!
         Capybara.use_default_driver
+      end
+
+      # Defer rails helpers methods to a different object
+      def __rails_helpers__ # :nodoc:
+        @__rails_helpers__ ||= ::Capybara::Rails::Helpers.new
+      end
+      def respond_to?(method, include_private = false) # :nodoc:
+        __rails_helpers__.respond_to?(method, include_private) || super
+      end
+      def method_missing(sym, *args, &block) # :nodoc:
+        if __rails_helpers__.respond_to?(sym, true)
+          __rails_helpers__.__send__(sym, *args, &block)
+        else
+          super
+        end
       end
     end
   end
