@@ -3,7 +3,7 @@ require "minitest-rails"
 module MiniTest
   module Rails
     module Capybara
-      VERSION = "0.10.0"
+      VERSION = "1.0.0"
     end
   end
 end
