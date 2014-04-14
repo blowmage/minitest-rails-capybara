@@ -1,8 +1,8 @@
 require "minitest/autorun"
 require "minitest-rails-capybara"
 
-class TestMiniTestRailsCapybara < MiniTest::Unit::TestCase
+class TestMinitestRailsCapybara < Minitest::Unit::TestCase
   def test_sanity
-    assert MiniTest::Rails::Capybara::VERSION
+    assert Minitest::Rails::Capybara::VERSION
   end
 end

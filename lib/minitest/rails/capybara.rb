@@ -17,7 +17,7 @@ module Capybara
     class TestCase < ::ActiveSupport::TestCase
       include Capybara::DSL
       include Capybara::Assertions
-      include MiniTest::Metadata
+      include Minitest::Metadata
 
       # Register by name
       register_spec_type(/(Feature|Browser)( ?Test)?\z/i, self)

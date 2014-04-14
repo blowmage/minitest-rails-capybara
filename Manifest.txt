@@ -7,13 +7,10 @@ LICENSE
 Manifest.txt
 README.rdoc
 Rakefile
-gemfiles/3.0.gemfile
-gemfiles/3.1.gemfile
-gemfiles/3.2.gemfile
-gemfiles/4.0.gemfile
-lib/generators/mini_test/feature/feature_generator.rb
-lib/generators/mini_test/feature/templates/feature_spec.rb
-lib/generators/mini_test/feature/templates/feature_test.rb
+gemfiles/4.1.gemfile
+lib/generators/minitest/feature/feature_generator.rb
+lib/generators/minitest/feature/templates/feature_spec.rb
+lib/generators/minitest/feature/templates/feature_test.rb
 lib/minitest-rails-capybara.rb
 lib/minitest/rails/capybara.rb
 minitest-rails-capybara.gemspec

@@ -13,9 +13,4 @@ rvm:
   - 1.9.3
   - 1.8.7
 env:
-  - "RAILS_VERSION=4.0"
-  - "RAILS_VERSION=3.2"
-matrix:
-  exclude:
-    - rvm: 1.8.7
-      env: "RAILS_VERSION=4.0"
+  - "RAILS_VERSION=4.1"

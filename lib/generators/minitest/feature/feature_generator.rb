@@ -1,7 +1,7 @@
 require "minitest-rails"
-require "generators/mini_test"
+require "generators/minitest"
 
-module MiniTest
+module Minitest
   module Generators
     class FeatureGenerator < Base
 
@@ -9,7 +9,7 @@ module MiniTest
         @_minitest_capybara_source_root ||= File.expand_path(File.join(File.dirname(__FILE__), 'templates'))
       end
 
-      class_option :spec, :type => :boolean, :default => false, :desc => "Use MiniTest::Spec DSL"
+      class_option :spec, :type => :boolean, :default => false, :desc => "Use Minitest::Spec DSL"
 
       check_class_collision :suffix => "Test"
 

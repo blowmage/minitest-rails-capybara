@@ -9,8 +9,8 @@ Hoe.plugin :gemspec
 Hoe.spec "minitest-rails-capybara" do
   developer "Mike Moore", "mike@blowmage.com"
 
-  self.summary     = "Capybara integration for MiniTest and Rails"
-  self.description = "Adds Capybara feature tests in MiniTest and Rails."
+  self.summary     = "Capybara integration for Minitest and Rails"
+  self.description = "Adds Capybara feature tests in Minitest and Rails."
   self.urls        = ["http://blowmage.com/minitest-rails-capybara"]
 
   self.history_file = "CHANGELOG.rdoc"
@@ -19,9 +19,9 @@ Hoe.spec "minitest-rails-capybara" do
 
   license "MIT"
 
-  dependency "minitest-rails",    "~> 1.0"
+  dependency "minitest-rails",    "~> 2.0"
   dependency "capybara",          "~> 2.0"
-  dependency "minitest-capybara", "~> 0.5.0"
+  dependency "minitest-capybara", "~> 0.6.1"
   dependency "minitest-metadata", "~> 0.5.0"
 end
 

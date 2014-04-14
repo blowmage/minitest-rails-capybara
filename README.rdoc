@@ -1,6 +1,6 @@
 = minitest-rails-capybara
 
-Capybara integration for MiniTest and Rails.
+Capybara integration for Minitest and Rails.
 
 {<img src="https://secure.travis-ci.org/blowmage/minitest-rails-capybara.png" alt="Build Status" />}[http://travis-ci.org/blowmage/minitest-rails-capybara]
 {<img src="https://codeclimate.com/github/blowmage/minitest-rails-capybara.png" />}[https://codeclimate.com/github/blowmage/minitest-rails-capybara]
@@ -36,7 +36,7 @@ Capybara is intended to be used for automating a browser to test your applicatio
 
 To generate these feature tests, you can use the feature generator:
 
-    rails generate mini_test:feature CanAccessHome
+    rails generate minitest:feature CanAccessHome
 
 You can now use Capybara in your feature tests!
 
@@ -51,7 +51,7 @@ You can now use Capybara in your feature tests!
 
 Or you can specify use of the Capybara's spec DSL by providing the <tt>--spec</tt> option:
 
-    rails generate mini_test:feature CanAccessHome --spec
+    rails generate minitest:feature CanAccessHome --spec
 
 Which will generate a feature test using the Capybara spec DSL:
 
@@ -94,7 +94,7 @@ Issue the following rake command to run your features tests:
 
 Or add the following to the bottom of your Rakefile to add feature tests to the default testing task:
 
-    MiniTest::Rails::Testing.default_tasks << "features"
+    Minitest::Rails::Testing.default_tasks << "features"
 
 == Get Involved
 
@@ -104,7 +104,7 @@ https://groups.google.com/group/minitest-rails
 
 == License
 
-Copyright (c) 2013 Mike Moore
+Copyright (c) 2014 Mike Moore
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
