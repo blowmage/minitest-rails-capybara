@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# stub: minitest-rails-capybara 2.0.0.20140414154914 ruby lib
+# stub: minitest-rails-capybara 2.0.0.20140414165007 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "minitest-rails-capybara"
-  s.version = "2.0.0.20140414154914"
+  s.version = "2.0.0.20140414165007"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
@@ -12,13 +12,13 @@ Gem::Specification.new do |s|
   s.description = "Adds Capybara feature tests in Minitest and Rails."
   s.email = ["mike@blowmage.com"]
   s.extra_rdoc_files = ["CHANGELOG.rdoc", "Manifest.txt", "README.rdoc"]
-  s.files = [".autotest", ".gemtest", ".travis.yml", "CHANGELOG.rdoc", "Gemfile", "LICENSE", "Manifest.txt", "README.rdoc", "Rakefile", "gemfiles/4.1.gemfile", "lib/generators/minitest/feature/feature_generator.rb", "lib/generators/minitest/feature/templates/feature_spec.rb", "lib/generators/minitest/feature/templates/feature_test.rb", "lib/minitest-rails-capybara.rb", "lib/minitest/rails/capybara.rb", "minitest-rails-capybara.gemspec", "tasks/test.rake", "test/rails_helper.rb", "test/test_assertions_expectation.rb", "test/test_dsl.rb", "test/test_sanity.rb", "test/test_spec.rb"]
+  s.files = [".autotest", ".gemtest", ".travis.yml", "CHANGELOG.rdoc", "Gemfile", "LICENSE", "Manifest.txt", "README.rdoc", "Rakefile", "gemfiles/4.1.gemfile", "lib/generators/minitest/feature/feature_generator.rb", "lib/generators/minitest/feature/templates/feature_spec.rb", "lib/generators/minitest/feature/templates/feature_test.rb", "lib/minitest-rails-capybara.rb", "lib/minitest/rails/capybara.rb", "minitest-rails-capybara.gemspec", "tasks/test.rake", "test/rails_helper.rb", "test/test_assertions_expectation.rb", "test/test_dsl.rb", "test/test_sanity.rb", "test/test_spec.rb", "test/test_spec_type.rb"]
   s.homepage = "http://blowmage.com/minitest-rails-capybara"
   s.licenses = ["MIT"]
   s.rdoc_options = ["--main", "README.rdoc"]
   s.rubygems_version = "2.2.2"
   s.summary = "Capybara integration for Minitest and Rails"
-  s.test_files = ["test/test_assertions_expectation.rb", "test/test_dsl.rb", "test/test_sanity.rb", "test/test_spec.rb"]
+  s.test_files = ["test/test_assertions_expectation.rb", "test/test_dsl.rb", "test/test_sanity.rb", "test/test_spec.rb", "test/test_spec_type.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

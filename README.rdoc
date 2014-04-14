@@ -60,11 +60,22 @@ Which will generate a feature test using the Capybara spec DSL:
     feature "Can Access Home" do
       scenario "has content" do
         visit root_path
-        assert page.has_content?("Home#index")
+        page.must_have_content "Home#index"
       end
     end
 
-If you want Capybara within your integration tests, add the following to your <tt>minitest_helper.rb</tt> file:
+An alternative way to specify using Capybara is to provide <tt>:capybara</tt> as a second argument to <tt>describe</tt>:
+
+    require "minitest_helper"
+
+    describe "Can Access Home", :capybara do
+      it "has content" do
+        visit root_path
+        page.must_have_content "Home#index"
+      end
+    end
+
+While not recommended, you can add Capybara to your integration tests. To do this add the following to your <tt>test_helper.rb</tt> file:
 
     class ActionDispatch::IntegrationTest
       include Capybara::DSL
@@ -78,7 +89,7 @@ Tests can specify drivers by setting the metadata.
     feature "Can Access Home" do
       scenario "has content", js: true do
         visit root_path # Visited with JavaScript driver
-        assert page.has_content?("Home#index")
+        page.must_have_content "Home#index"
       end
     end
 
