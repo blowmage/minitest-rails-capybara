@@ -9,9 +9,9 @@ module Minitest
         @_minitest_capybara_source_root ||= File.expand_path(File.join(File.dirname(__FILE__), 'templates'))
       end
 
-      class_option :spec, :type => :boolean, :default => false, :desc => "Use Minitest::Spec DSL"
+      class_option :spec, type: :boolean, default: false, desc: "Use Minitest::Spec DSL"
 
-      check_class_collision :suffix => "Test"
+      check_class_collision suffix: "Test"
 
       def create_test_files
         if options[:spec]
