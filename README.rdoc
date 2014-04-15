@@ -26,7 +26,7 @@ Follow the instructions to configure <tt>minitest-rails</tt>. Then add <tt>minit
       gem "minitest-rails-capybara"
     end
 
-Add the following to your <tt>minitest_helper.rb</tt> file to the <tt>test</tt> directory.
+Add the following to your <tt>test_helper.rb</tt> file to the <tt>test</tt> directory.
 
     require "minitest/rails/capybara"
 
@@ -40,7 +40,7 @@ To generate these feature tests, you can use the feature generator:
 
 You can now use Capybara in your feature tests!
 
-    require "minitest_helper"
+    require "test_helper"
     
     class CanAccessHomeTest < Capybara::Rails::TestCase
       def test_homepage_has_content
@@ -55,7 +55,7 @@ Or you can specify use of the Capybara's spec DSL by providing the <tt>--spec</t
 
 Which will generate a feature test using the Capybara spec DSL:
 
-    require "minitest_helper"
+    require "test_helper"
     
     feature "Can Access Home" do
       scenario "has content" do
@@ -66,7 +66,7 @@ Which will generate a feature test using the Capybara spec DSL:
 
 An alternative way to specify using Capybara is to provide <tt>:capybara</tt> as a second argument to <tt>describe</tt>:
 
-    require "minitest_helper"
+    require "test_helper"
 
     describe "Can Access Home", :capybara do
       it "has content" do
