@@ -19,7 +19,7 @@ Hoe.spec "minitest-rails-capybara" do
 
   license "MIT"
 
-  dependency "minitest-rails",    "= 2.0.0.beta1"
+  dependency "minitest-rails",    "~> 2.0.0"
   dependency "capybara",          "~> 2.0"
   dependency "minitest-capybara", "~> 0.6.1"
   dependency "minitest-metadata", "~> 0.5.0"
