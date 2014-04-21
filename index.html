@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>minitest-rails-capybara-2.0.0.beta1 Documentation</title>
+<title>minitest-rails-capybara-2.0.0 Documentation</title>
 
 <link href="./fonts.css" rel="stylesheet">
 <link href="./rdoc.css" rel="stylesheet">
@@ -129,7 +129,7 @@ group :test do
   gem &quot;minitest-rails-capybara&quot;
 end</pre>
 
-<p>Add the following to your <code>minitest_helper.rb</code> file to the
+<p>Add the following to your <code>test_helper.rb</code> file to the
 <code>test</code> directory.</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/rails/capybara&quot;</span>
@@ -148,7 +148,7 @@ that Rails provides, so you must use the
 
 <p>You can now use Capybara in your feature tests!</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;test_helper&quot;</span>
 
 <span class="ruby-keyword">class</span> <span class="ruby-constant">CanAccessHomeTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_homepage_has_content</span>
@@ -165,7 +165,7 @@ that Rails provides, so you must use the
 
 <p>Which will generate a feature test using the Capybara spec DSL:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;test_helper&quot;</span>
 
 <span class="ruby-identifier">feature</span> <span class="ruby-string">&quot;Can Access Home&quot;</span> <span class="ruby-keyword">do</span>
   <span class="ruby-identifier">scenario</span> <span class="ruby-string">&quot;has content&quot;</span> <span class="ruby-keyword">do</span>
@@ -178,7 +178,7 @@ that Rails provides, so you must use the
 <p>An alternative way to specify using Capybara is to provide
 <code>:capybara</code> as a second argument to <code>describe</code>:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest_helper&quot;</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;test_helper&quot;</span>
 
 <span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;Can Access Home&quot;</span>, :<span class="ruby-identifier">capybara</span> <span class="ruby-keyword">do</span>
   <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;has content&quot;</span> <span class="ruby-keyword">do</span>
