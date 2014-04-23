@@ -215,14 +215,18 @@ href="https://github.com/wojtekmach/minitest-metadata">github.com/wojtekmach/min
 
 <h2 id="label-Running+Tests">Running Tests<span><a href="#label-Running+Tests">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>Issue the following rake command to run your features tests:</p>
+<p>Add the following to your <code>Rakefile</code> or a file in
+<code>lib/tasks</code> to add a rake task for running feature tests:</p>
 
-<pre>$ rake minitest:features</pre>
+<pre class="ruby"><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">TestTask</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;test:features&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test:prepare&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">t</span>.<span class="ruby-identifier">pattern</span> = <span class="ruby-string">&quot;test/features   /*_test.rb&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
-<p>Or add the following to the bottom of your Rakefile to add feature tests to
-the default testing task:</p>
+<p>If you want your new task to be run when you run <code>rake test</code>,
+also add the following:</p>
 
-<pre>Minitest::Rails::Testing.default_tasks &lt;&lt; &quot;features&quot;</pre>
+<pre>Rake::Task[&quot;test:run&quot;].enhance [&quot;test:features&quot;]</pre>
 
 <h2 id="label-Get+Involved">Get Involved<span><a href="#label-Get+Involved">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 

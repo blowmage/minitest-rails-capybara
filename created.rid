@@ -1,9 +1,9 @@
-Mon, 21 Apr 2014 13:53:24 -0600
-lib/generators/minitest/feature/feature_generator.rb	Mon, 14 Apr 2014 19:21:56 -0600
-lib/generators/minitest/feature/templates/feature_spec.rb	Mon, 14 Apr 2014 19:21:56 -0600
-lib/generators/minitest/feature/templates/feature_test.rb	Mon, 14 Apr 2014 19:21:56 -0600
-lib/minitest/rails/capybara.rb	Mon, 14 Apr 2014 19:21:56 -0600
-lib/minitest-rails-capybara.rb	Mon, 21 Apr 2014 13:49:47 -0600
-CHANGELOG.rdoc	Mon, 21 Apr 2014 13:50:45 -0600
-Manifest.txt	Mon, 21 Apr 2014 13:50:21 -0600
-README.rdoc	Mon, 14 Apr 2014 19:22:12 -0600
+Wed, 23 Apr 2014 17:24:31 -0600
+lib/generators/minitest/feature/feature_generator.rb	Wed, 23 Apr 2014 17:23:56 -0600
+lib/generators/minitest/feature/templates/feature_spec.rb	Wed, 23 Apr 2014 17:23:56 -0600
+lib/generators/minitest/feature/templates/feature_test.rb	Wed, 23 Apr 2014 17:23:56 -0600
+lib/minitest/rails/capybara.rb	Wed, 23 Apr 2014 17:23:56 -0600
+lib/minitest-rails-capybara.rb	Wed, 23 Apr 2014 17:23:56 -0600
+CHANGELOG.rdoc	Wed, 23 Apr 2014 17:23:56 -0600
+Manifest.txt	Wed, 23 Apr 2014 17:23:56 -0600
+README.rdoc	Wed, 23 Apr 2014 17:24:09 -0600
