@@ -26,14 +26,14 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<minitest-rails>, ["~> 2.0.0"])
       s.add_runtime_dependency(%q<capybara>, ["~> 2.0"])
-      s.add_runtime_dependency(%q<minitest-capybara>, ["~> 0.6.1"])
+      s.add_runtime_dependency(%q<minitest-capybara>, ["~> 0.7.0"])
       s.add_runtime_dependency(%q<minitest-metadata>, ["~> 0.5.0"])
       s.add_development_dependency(%q<rdoc>, ["~> 4.0"])
       s.add_development_dependency(%q<hoe>, ["~> 3.11"])
     else
       s.add_dependency(%q<minitest-rails>, ["~> 2.0.0"])
       s.add_dependency(%q<capybara>, ["~> 2.0"])
-      s.add_dependency(%q<minitest-capybara>, ["~> 0.6.1"])
+      s.add_dependency(%q<minitest-capybara>, ["~> 0.7.0"])
       s.add_dependency(%q<minitest-metadata>, ["~> 0.5.0"])
       s.add_dependency(%q<rdoc>, ["~> 4.0"])
       s.add_dependency(%q<hoe>, ["~> 3.11"])
@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<minitest-rails>, ["~> 2.0.0"])
     s.add_dependency(%q<capybara>, ["~> 2.0"])
-    s.add_dependency(%q<minitest-capybara>, ["~> 0.6.1"])
+    s.add_dependency(%q<minitest-capybara>, ["~> 0.7.0"])
     s.add_dependency(%q<minitest-metadata>, ["~> 0.5.0"])
     s.add_dependency(%q<rdoc>, ["~> 4.0"])
     s.add_dependency(%q<hoe>, ["~> 3.11"])
