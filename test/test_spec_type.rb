@@ -51,6 +51,8 @@ class TestCapybaraSpecType < Minitest::Test
 
   def test_spec_type_resolves_for_additional_desc_capybara
     refute_capybara Minitest::Spec.spec_type("Unmatched String")
-    assert_capybara Minitest::Spec.spec_type(["Unmatched String", :capybara])
+    assert_capybara Minitest::Spec.spec_type("Unmatched String", :capybara)
+    assert_capybara Minitest::Spec.spec_type("Unmatched String", :capybara, :other)
+    assert_capybara Minitest::Spec.spec_type("Unmatched String", :other, :capybara)
   end
 end

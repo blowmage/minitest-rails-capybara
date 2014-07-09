@@ -21,8 +21,8 @@ module Capybara
 
       # Register by name
       register_spec_type(/(Feature|Browser)( ?Test)?\z/i, self)
-      register_spec_type(self) do |desc, addl|
-        :capybara == addl
+      register_spec_type(self) do |desc, *addl|
+        addl.include? :capybara
       end
 
       # Enable Capybara's spec DSL
