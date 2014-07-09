@@ -27,6 +27,7 @@ module Capybara
 
       # Enable Capybara's spec DSL
       class << self
+        alias :feature    :describe
         alias :background :before
         alias :scenario   :it
         alias :given      :let
@@ -62,10 +63,10 @@ module Capybara
   end
 end
 
-module Kernel # :nodoc:
-  def feature desc, &blk
-    describe "#{desc} Feature Test", &blk
-  end
+# Add feature to main object
+def feature desc, *addl, &blk # :nodoc:
+    addl << :capybara
+    describe desc, addl, &blk
 end
 
 module Capybara
