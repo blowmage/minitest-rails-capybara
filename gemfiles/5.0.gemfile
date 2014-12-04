@@ -1,0 +1,5 @@
+source "http://rubygems.org"
+
+gem "rails", github: "rails/rails"
+gem "minitest-rails", github: "blowmage/minitest-rails", branch: "rails5"
+gem "rake"

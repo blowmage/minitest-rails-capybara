@@ -7,7 +7,7 @@ LICENSE
 Manifest.txt
 README.rdoc
 Rakefile
-gemfiles/4.1.gemfile
+gemfiles/5.0.gemfile
 lib/generators/minitest/feature/feature_generator.rb
 lib/generators/minitest/feature/templates/feature_spec.rb
 lib/generators/minitest/feature/templates/feature_test.rb
