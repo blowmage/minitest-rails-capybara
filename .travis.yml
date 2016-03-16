@@ -2,6 +2,7 @@
 before_install:
   - gem update --system
   - gem --version
+  - gem update bundler
 language: ruby
 notifications:
   email:
