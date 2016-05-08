@@ -1,3 +1,9 @@
+=== 2.1.2 / 2016-05-07
+
+* Update dependencies (knightq, fbernier)
+* Update bundler on TravisCI (RKushnir)
+* Fix typo in generated test (switowski)
+
 === 2.1.1 / 2014-07-08
 
 * Fix bug with Capybara's DSL
@@ -80,4 +86,3 @@ https://github.com/blowmage/minitest-rails-capybara/compare/v0.0.1...v0.0.2
 * 1 major enhancement
 
   * Birthday!
-
