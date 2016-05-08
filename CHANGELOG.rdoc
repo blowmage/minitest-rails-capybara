@@ -2,7 +2,7 @@
 
 * Update dependencies (knightq, fbernier)
 * Update bundler on TravisCI (RKushnir)
-* Fix typo in generated test (switowski)
+* Fix typo in generated test (TimHugh, switowski)
 
 === 2.1.1 / 2014-07-08
 
