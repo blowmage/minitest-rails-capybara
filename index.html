@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>minitest-rails-capybara-2.0.1</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>minitest-rails-capybara-3.0.0 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -74,6 +71,14 @@
 
   <ul class="link-list">
   
+    <li><a href="./Capybara.html">Capybara</a>
+  
+    <li><a href="./Capybara/Assertions.html">Capybara::Assertions</a>
+  
+    <li><a href="./Capybara/Expectations.html">Capybara::Expectations</a>
+  
+    <li><a href="./Capybara/Rails.html">Capybara::Rails</a>
+  
     <li><a href="./Capybara/Rails/TestCase.html">Capybara::Rails::TestCase</a>
   
     <li><a href="./Minitest.html">Minitest</a>
@@ -95,9 +100,10 @@
 <main role="main">
 
 
-<h1 id="label-minitest-rails-capybara">minitest-rails-capybara<span><a href="#label-minitest-rails-capybara">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-minitest-rails-capybara">minitest-rails-capybara<span><a href="#label-minitest-rails-capybara">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>Capybara integration for <a href="Minitest.html">Minitest</a> and Rails.</p>
+<p><a href="Capybara.html">Capybara</a> integration for <a
+href="Minitest.html">Minitest</a> and Rails.</p>
 
 <p><a href="http://travis-ci.org/blowmage/minitest-rails-capybara"><img
 src="https://secure.travis-ci.org/blowmage/minitest-rails-capybara.png"
@@ -106,28 +112,31 @@ href="https://codeclimate.com/github/blowmage/minitest-rails-capybara"><img
 src="https://codeclimate.com/github/blowmage/minitest-rails-capybara.png"
 /></a></p>
 
-<h2 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<pre>gem install minitest-rails-capybara</pre>
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">minitest</span><span class="ruby-operator">-</span><span class="ruby-identifier">rails</span><span class="ruby-operator">-</span><span class="ruby-identifier">capybara</span>
+</pre>
 
 <p>This installs the following gems:</p>
 
-<pre>minitest
-minitest-rails
-minitest-capybara
-capybara</pre>
+<pre class="ruby"><span class="ruby-identifier">minitest</span>
+<span class="ruby-identifier">minitest</span><span class="ruby-operator">-</span><span class="ruby-identifier">rails</span>
+<span class="ruby-identifier">minitest</span><span class="ruby-operator">-</span><span class="ruby-identifier">capybara</span>
+<span class="ruby-identifier">capybara</span>
+</pre>
 
-<h2 id="label-Configure">Configure<span><a href="#label-Configure">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Configure">Configure<span><a href="#label-Configure">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Follow the instructions to configure <code>minitest-rails</code>. Then add
 <code>minitest-rails-capybara</code> to the <code>:test</code> group in
 Gemfile:</p>
 
-<pre>gem &quot;minitest-rails&quot;
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;minitest-rails&quot;</span>
 
-group :test do
-  gem &quot;minitest-rails-capybara&quot;
-end</pre>
+<span class="ruby-identifier">group</span> :<span class="ruby-identifier">test</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;minitest-rails-capybara&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 <p>Add the following to your <code>test_helper.rb</code> file to the
 <code>test</code> directory.</p>
@@ -135,35 +144,18 @@ end</pre>
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/rails/capybara&quot;</span>
 </pre>
 
-<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Capybara is intended to be used for automating a browser to test your
-application&#39;s features. This is different than the integration tests
-that Rails provides, so you must use the
+<p><a href="Capybara.html">Capybara</a> is intended to be used for automating
+a browser to test your application&#39;s features. This is different than
+the integration tests that Rails provides, so you must use the
 <code>Capybara::Rails::TestCase</code> for your feature tests.</p>
 
 <p>To generate these feature tests, you can use the feature generator:</p>
 
 <pre>rails generate minitest:feature CanAccessHome</pre>
 
-<p>You can now use Capybara in your feature tests!</p>
-
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;test_helper&quot;</span>
-
-<span class="ruby-keyword">class</span> <span class="ruby-constant">CanAccessHomeTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_homepage_has_content</span>
-    <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span>
-    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">has_content?</span>(<span class="ruby-node">&quot;Home#index&quot;</span>)
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span>
-</pre>
-
-<p>Or you can specify use of the Capybara&#39;s spec DSL by providing the
-<code>--spec</code> option:</p>
-
-<pre>rails generate minitest:feature CanAccessHome --spec</pre>
-
-<p>Which will generate a feature test using the Capybara spec DSL:</p>
+<p>You can now use <a href="Capybara.html">Capybara</a> in your feature tests!</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;test_helper&quot;</span>
 
@@ -175,8 +167,27 @@ that Rails provides, so you must use the
 <span class="ruby-keyword">end</span>
 </pre>
 
-<p>An alternative way to specify using Capybara is to provide
-<code>:capybara</code> as a second argument to <code>describe</code>:</p>
+<p>Or you can opt-out of the Capybara&#39;s spec DSL by providing the
+<code>--no-spec</code> option:</p>
+
+<pre>rails generate minitest:feature CanAccessHome --no-spec</pre>
+
+<p>Which will generate a feature test using the <a
+href="Capybara.html">Capybara</a> spec DSL:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;test_helper&quot;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">CanAccessHomeTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_homepage_has_content</span>
+    <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">has_content?</span>(<span class="ruby-node">&quot;Home#index&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>An alternative way to specify using <a href="Capybara.html">Capybara</a> is
+to provide <code>:capybara</code> as a second argument to
+<code>describe</code>:</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;test_helper&quot;</span>
 
@@ -188,8 +199,9 @@ that Rails provides, so you must use the
 <span class="ruby-keyword">end</span>
 </pre>
 
-<p>While not recommended, you can add Capybara to your integration tests. To
-do this add the following to your <code>test_helper.rb</code> file:</p>
+<p>While not recommended, you can add <a href="Capybara.html">Capybara</a> to
+your integration tests. To do this add the following to your
+<code>test_helper.rb</code> file:</p>
 
 <pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">IntegrationTest</span>
   <span class="ruby-identifier">include</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">DSL</span>
@@ -197,45 +209,35 @@ do this add the following to your <code>test_helper.rb</code> file:</p>
 <span class="ruby-keyword">end</span>
 </pre>
 
-<h2 id="label-Specifying+drivers">Specifying drivers<span><a href="#label-Specifying+drivers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Specifying+drivers">Specifying drivers<span><a href="#label-Specifying+drivers">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Tests can specify drivers by setting the metadata.</p>
 
-<pre>feature &quot;Can Access Home&quot; do
-  scenario &quot;has content&quot;, js: true do
-    visit root_path # Visited with JavaScript driver
-    page.must_have_content &quot;Home#index&quot;
-  end
-end</pre>
+<pre class="ruby"><span class="ruby-identifier">feature</span> <span class="ruby-string">&quot;Can Access Home&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">scenario</span> <span class="ruby-string">&quot;has content&quot;</span>, <span class="ruby-identifier">js</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">visit</span> <span class="ruby-identifier">root_path</span> <span class="ruby-comment"># Visited with JavaScript driver</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">must_have_content</span> <span class="ruby-node">&quot;Home#index&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 <p>For more information, see the minitest-metadata library:</p>
 
 <p><a
 href="https://github.com/wojtekmach/minitest-metadata">github.com/wojtekmach/minitest-metadata</a></p>
 
-<h2 id="label-Running+Tests">Running Tests<span><a href="#label-Running+Tests">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Running+Tests">Running Tests<span><a href="#label-Running+Tests">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Add the following to your <code>Rakefile</code> or a file in
-<code>lib/tasks</code> to add a rake task for running feature tests:</p>
+<p>To run your tests use the <code>rails test</code> that ship with rails.</p>
 
-<pre class="ruby"><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">TestTask</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;test:features&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test:prepare&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
-  <span class="ruby-identifier">t</span>.<span class="ruby-identifier">pattern</span> = <span class="ruby-string">&quot;test/features   /*_test.rb&quot;</span>
-<span class="ruby-keyword">end</span>
-</pre>
-
-<p>If you want your new task to be run when you run <code>rake test</code>,
-also add the following:</p>
-
-<pre>Rake::Task[&quot;test:run&quot;].enhance [&quot;test:features&quot;]</pre>
-
-<h2 id="label-Get+Involved">Get Involved<span><a href="#label-Get+Involved">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Get+Involved">Get Involved<span><a href="#label-Get+Involved">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Join the mailing list to get help or offer suggestions.</p>
 
 <p><a
 href="https://groups.google.com/group/minitest-rails">groups.google.com/group/minitest-rails</a></p>
 
-<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Copyright © 2014 Mike Moore</p>
 
@@ -262,7 +264,7 @@ DEALINGS IN THE SOFTWARE.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

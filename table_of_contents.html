@@ -4,26 +4,23 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Table of Contents - minitest-rails-capybara-2.0.1</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>Table of Contents - minitest-rails-capybara-3.0.0 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" class="table-of-contents">
 <main role="main">
-<h1 class="class">Table of Contents - minitest-rails-capybara-2.0.1</h1>
+<h1 class="class">Table of Contents - minitest-rails-capybara-3.0.0 Documentation</h1>
 
 <h2 id="pages">Pages</h2>
 <ul>
@@ -31,16 +28,19 @@
     <a href="CHANGELOG_rdoc.html">CHANGELOG</a>
 
     <ul>
-      <li><a href="CHANGELOG_rdoc.html#label-2.0.1+%2F+2014-06-14">2.0.1 / 2014-06-14</a>
-      <li><a href="CHANGELOG_rdoc.html#label-2.0.0+%2F+2014-04-21">2.0.0 / 2014-04-21</a>
-      <li><a href="CHANGELOG_rdoc.html#label-1.0.0+%2F+2014-04-15">1.0.0 / 2014-04-15</a>
-      <li><a href="CHANGELOG_rdoc.html#label-0.10.0+%2F+2013-07-23">0.10.0 / 2013-07-23</a>
-      <li><a href="CHANGELOG_rdoc.html#label-0.9.0+%2F+2013-03-18">0.9.0 / 2013-03-18</a>
-      <li><a href="CHANGELOG_rdoc.html#label-0.5.1+%2F+2013-01-11">0.5.1 / 2013-01-11</a>
-      <li><a href="CHANGELOG_rdoc.html#label-0.5+%2F+2013-01-11">0.5 / 2013-01-11</a>
-      <li><a href="CHANGELOG_rdoc.html#label-0.1+%2F+2012-08-02">0.1 / 2012-08-02</a>
-      <li><a href="CHANGELOG_rdoc.html#label-0.0.2+%2F+2012-07-09">0.0.2 / 2012-07-09</a>
-      <li><a href="CHANGELOG_rdoc.html#label-0.0.1+%2F+2012-07-07">0.0.1 / 2012-07-07</a>
+      <li><a href="CHANGELOG_rdoc.html#label-3.0.0+-2F+2016-07-01">3.0.0 / 2016-07-01</a>
+      <li><a href="CHANGELOG_rdoc.html#label-2.1.1+-2F+2014-07-08">2.1.1 / 2014-07-08</a>
+      <li><a href="CHANGELOG_rdoc.html#label-2.1.0+-2F+2014-07-08">2.1.0 / 2014-07-08</a>
+      <li><a href="CHANGELOG_rdoc.html#label-2.0.1+-2F+2014-06-14">2.0.1 / 2014-06-14</a>
+      <li><a href="CHANGELOG_rdoc.html#label-2.0.0+-2F+2014-04-21">2.0.0 / 2014-04-21</a>
+      <li><a href="CHANGELOG_rdoc.html#label-1.0.0+-2F+2014-04-15">1.0.0 / 2014-04-15</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.10.0+-2F+2013-07-23">0.10.0 / 2013-07-23</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.9.0+-2F+2013-03-18">0.9.0 / 2013-03-18</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.5.1+-2F+2013-01-11">0.5.1 / 2013-01-11</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.5+-2F+2013-01-11">0.5 / 2013-01-11</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.1+-2F+2012-08-02">0.1 / 2012-08-02</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.0.2+-2F+2012-07-09">0.0.2 / 2012-07-09</a>
+      <li><a href="CHANGELOG_rdoc.html#label-0.0.1+-2F+2012-07-07">0.0.1 / 2012-07-07</a>
     </ul>
   </li>
     <li class="file">
@@ -65,6 +65,18 @@
 
 <h2 id="classes">Classes and Modules</h2>
 <ul>
+  <li class="module">
+    <a href="Capybara.html">Capybara</a>
+  </li>
+  <li class="module">
+    <a href="Capybara/Assertions.html">Capybara::Assertions</a>
+  </li>
+  <li class="module">
+    <a href="Capybara/Expectations.html">Capybara::Expectations</a>
+  </li>
+  <li class="module">
+    <a href="Capybara/Rails.html">Capybara::Rails</a>
+  </li>
   <li class="class">
     <a href="Capybara/Rails/TestCase.html">Capybara::Rails::TestCase</a>
   </li>
@@ -94,16 +106,256 @@
     <span class="container">Minitest::Generators::FeatureGenerator</span>
 
   <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_button">#assert_button</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_checked_field">#assert_checked_field</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_content">#assert_content</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_css">#assert_css</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_field">#assert_field</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_link">#assert_link</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_select">#assert_select</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_selector">#assert_selector</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_table">#assert_table</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_text">#assert_text</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_unchecked_field">#assert_unchecked_field</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-assert_xpath">#assert_xpath</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
     <a href="Minitest/Generators/FeatureGenerator.html#method-i-create_test_files">#create_test_files</a>
     &mdash;
     <span class="container">Minitest::Generators::FeatureGenerator</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_button">#must_have_button</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_checked_field">#must_have_checked_field</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_content">#must_have_content</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_css">#must_have_css</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_field">#must_have_field</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_link">#must_have_link</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_select">#must_have_select</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_selector">#must_have_selector</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_table">#must_have_table</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_text">#must_have_text</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_unchecked_field">#must_have_unchecked_field</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-must_have_xpath">#must_have_xpath</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_button">#refute_button</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_checked_field">#refute_checked_field</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_content">#refute_content</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_css">#refute_css</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_field">#refute_field</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_link">#refute_link</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_select">#refute_select</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_selector">#refute_selector</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_table">#refute_table</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_text">#refute_text</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_unchecked_field">#refute_unchecked_field</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Assertions.html#method-i-refute_xpath">#refute_xpath</a>
+    &mdash;
+    <span class="container">Capybara::Assertions</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_button">#wont_have_button</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_checked_field">#wont_have_checked_field</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_content">#wont_have_content</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_css">#wont_have_css</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_field">#wont_have_field</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_link">#wont_have_link</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_select">#wont_have_select</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_selector">#wont_have_selector</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_table">#wont_have_table</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_text">#wont_have_text</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_unchecked_field">#wont_have_unchecked_field</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
+
+  <li class="method">
+    <a href="Capybara/Expectations.html#method-i-wont_have_xpath">#wont_have_xpath</a>
+    &mdash;
+    <span class="container">Capybara::Expectations</span>
 </ul>
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
