@@ -41,26 +41,26 @@ To generate these feature tests, you can use the feature generator:
 You can now use Capybara in your feature tests!
 
     require "test_helper"
-    
-    class CanAccessHomeTest < Capybara::Rails::TestCase
-      def test_homepage_has_content
-        visit root_path
-        assert page.has_content?("Home#index")
-      end
-    end
 
-Or you can specify use of the Capybara's spec DSL by providing the <tt>--spec</tt> option:
-
-    rails generate minitest:feature CanAccessHome --spec
-
-Which will generate a feature test using the Capybara spec DSL:
-
-    require "test_helper"
-    
     feature "Can Access Home" do
       scenario "has content" do
         visit root_path
         page.must_have_content "Home#index"
+      end
+    end
+
+Or you can opt-out of the Capybara's spec DSL by providing the <tt>--no-spec</tt> option:
+
+    rails generate minitest:feature CanAccessHome --no-spec
+
+Which will generate a feature test using the Capybara spec DSL:
+
+    require "test_helper"
+
+    class CanAccessHomeTest < Capybara::Rails::TestCase
+      def test_homepage_has_content
+        visit root_path
+        assert page.has_content?("Home#index")
       end
     end
 
@@ -99,15 +99,7 @@ https://github.com/wojtekmach/minitest-metadata
 
 == Running Tests
 
-Add the following to your <tt>Rakefile</tt> or a file in <tt>lib/tasks</tt> to add a rake task for running feature tests:
-
-    Rails::TestTask.new("test:features" => "test:prepare") do |t|
-      t.pattern = "test/features/**/*_test.rb"
-    end
-
-If you want your new task to be run when you run <tt>rake test</tt>, also add the following:
-
-    Rake::Task["test:run"].enhance ["test:features"]
+To run your tests use the <tt>rails test</tt> that ship with rails.
 
 == Get Involved
 
