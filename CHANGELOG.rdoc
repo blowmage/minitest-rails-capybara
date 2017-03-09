@@ -1,3 +1,9 @@
+=== 3.0.1 / 2017-03-09
+
+* Fix bug in spec configuration, tests should use the spec DSL by default now.
+
+https://github.com/blowmage/minitest-rails-capybara/compare/v3.0.0...v3.0.1
+
 === 3.0.0 / 2016-07-01
 
 * Support Rails 5
