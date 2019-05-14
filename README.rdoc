@@ -53,7 +53,7 @@ Or you can opt-out of the Capybara's spec DSL by providing the <tt>--no-spec</tt
 
     rails generate minitest:feature CanAccessHome --no-spec
 
-Which will generate a feature test using the Capybara spec DSL:
+which will generate a feature test without using the Capybara spec DSL:
 
     require "test_helper"
 
