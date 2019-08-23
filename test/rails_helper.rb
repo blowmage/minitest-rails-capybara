@@ -5,6 +5,7 @@ require "action_controller/railtie"
 
 class TestApp < Rails::Application
   config.secret_token = "821c600ece97fc4ba952d67655b4b475"
+  config.eager_load = false
   initialize!
   routes.draw do
     root to: "hello#world"
