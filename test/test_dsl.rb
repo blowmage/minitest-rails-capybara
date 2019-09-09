@@ -5,7 +5,7 @@ describe "Capybara DSL Feature Test" do
   it "can call using_wait_time" do
     ret = "ZOMG! using_wait_time was called!"
     Capybara.stub :using_wait_time, ret do
-      assert_equal ret, using_wait_time(6)
+      assert_equal ret, using_wait_time(6) {}
     end
   end
 
