@@ -1,0 +1,10 @@
+source "http://rubygems.org" do
+  gemspec path: ".."
+
+  gem "rails", "~> 5.1.0"
+  gem "sqlite3"
+  gem "rake"
+
+  gem "hoe-git", "~> 1.0"
+  gem "hoe-gemspec", "~> 1.0"
+end

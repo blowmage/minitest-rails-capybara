@@ -2,6 +2,9 @@ source "http://rubygems.org"
 
 gemspec
 
-version = ENV["RAILS_VERSION"] || "5.0"
+gem "rails", "~> 5.0"
+gem "sqlite3"
+gem "rake"
 
-eval_gemfile File.expand_path("../gemfiles/#{version}.gemfile", __FILE__)
+gem "hoe-git", "~> 1.0"
+gem "hoe-gemspec", "~> 1.0"
