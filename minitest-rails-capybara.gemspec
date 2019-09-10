@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# stub: minitest-rails-capybara 3.0.1.20190910091745 ruby lib
+# stub: minitest-rails-capybara 3.0.2.20190910100645 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "minitest-rails-capybara".freeze
-  s.version = "3.0.1.20190910091745"
+  s.version = "3.0.2.20190910100645"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]

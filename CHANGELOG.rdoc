@@ -1,3 +1,9 @@
+=== 3.0.2 / 2019-09-10
+
+* Allow Capybara 3 (@iloveitaly)
+
+https://github.com/blowmage/minitest-rails-capybara/compare/v3.0.1...v3.0.2
+
 === 3.0.1 / 2017-03-09
 
 * Fix bug in spec configuration, tests should use the spec DSL by default now.
